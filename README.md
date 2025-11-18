@@ -5,3 +5,6 @@ Este proyecto muestra un aplicativo con interfaz gráfica creado en Java para co
 Elaborado por:  
 - García Melgarejo Diana.  
 - Jacobo Santos Marco Antonio.
+- Alvarez Fonseca Ana Patricia Guadalupe.
+- Espinosa Martínez Daniel.
+- Robledo Pérez Sergio Ángel.
