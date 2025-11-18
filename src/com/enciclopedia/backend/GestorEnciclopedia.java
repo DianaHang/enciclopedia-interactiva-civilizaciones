@@ -8,9 +8,9 @@ public class GestorEnciclopedia {
 	private ArrayList <Usuario> users;
 	
 	//Constructor
-	public GestorEnciclopedia(ArrayList<Civilizacion> civilizaciones, ArrayList<Usuario> users) {
-		this.civilizaciones = civilizaciones;
-		this.users = users;
+	public GestorEnciclopedia() {
+		this.civilizaciones = new ArrayList<>();
+		this.users = new ArrayList<>();
 	}
 	
 	//Getters y Setters
@@ -27,33 +27,45 @@ public class GestorEnciclopedia {
 		this.users = users;
 	}
 	
-	//Métodos
+	//Métodos==========================================
 	public void buscarPorCriterio() {
-		
+		//TODO: Integrar con el panel de swing.
+	}
+	
+	public Civilizacion buscarCivilizacion(String nombre) {
+	     for (Civilizacion c : civilizaciones) {
+	         if (c.getNombre().equalsIgnoreCase(nombre))
+	             return c;
+	     }
+	     return null;
 	}
 	
 	public void agregarCivilizacion(Civilizacion c) {
-		
+		if (!civilizaciones.contains(c))
+            civilizaciones.add(c);
 	}
 	
 	public void eliminarCivilizacion(Civilizacion c) {
-		
+		civilizaciones.remove(c);
 	}
 
 	public Usuario buscarUsuario(String nombre) {
-		return null;
-		
-	}
+		for (Usuario u : users) {
+            if (u.getNombreUsuario().equalsIgnoreCase(nombre))
+                return u;
+        }
+        return null;
+		}
 	
 	public void mostrarLineaTiempo() {
-		
+		//TODO: Ordenar eventos por fecha y construir un String.
 	}
 	
 	public void gestionarDatos() {
-		
+		//TODO: Integrar con JSON?
 	}
 
 	public void validarDatos() {
-
+		//TODO: Verificar campos obligatorios.
 	}
 }
