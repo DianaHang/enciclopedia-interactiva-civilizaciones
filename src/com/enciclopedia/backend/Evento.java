@@ -2,6 +2,8 @@ package com.enciclopedia.backend;
 
 import java.util.Date;
 
+import javax.swing.JOptionPane;
+
 public class Evento implements Informacion {
 	//Atributos
 	private Date fecha;
@@ -38,9 +40,11 @@ public class Evento implements Informacion {
 	
 	//Métodos
 	@Override
-	public void mostrarInformacion() {
-		// TODO Auto-generated method stub
-		
+	public String mostrarInformacion() {
+		return "*****EVENTO*****\n" 
+					+ "-Título: " + titulo
+					+ "\n-Fecha: " + fecha
+					+ "\n-Descripción: " + descripcion;
 	}
 	
 	
