@@ -2,6 +2,8 @@ package com.enciclopedia.backend;
 
 import java.util.Date;
 
+import javax.swing.JOptionPane;
+
 public class Personaje implements Informacion {
 	//Atributos
 	private Date fechaNac;
@@ -53,9 +55,12 @@ public class Personaje implements Informacion {
 
 	//Métodos
 	@Override
-	public void mostrarInformacion() {
-		// TODO Auto-generated method stub
-		
+	public String mostrarInformacion() {
+		return "*****PERSONAJE*****\n" 
+				+ "-Nombre: " + nombre
+				+ "\n-Fecha de nacimiento: " + fechaNac
+				+ "\n-Aportes: " + aportes
+				+ "\n-Foto: " + fotoPers;
 	}
 	
 	
