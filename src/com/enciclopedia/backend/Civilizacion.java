@@ -84,23 +84,51 @@ public class Civilizacion implements Informacion, AgregarInformacion {
 
 	//Métodos
 	@Override
-	public void mostrarInformacion() {
-		// TODO Auto-generated method stub
-		
+	public String mostrarInformacion() {
+		 StringBuilder sb = new StringBuilder();
+
+		    sb.append("===== CIVILIZACIÓN =====\n")
+		      .append("Nombre: ").append(nombre).append("\n")
+		      .append("Región: ").append(region).append("\n")
+		      .append("Época: ").append(epoca).append("\n")
+		      .append("Descripción: ").append(descripcion).append("\n")
+		      .append("Foto: ").append(fotoCiv).append("\n\n");
+
+		    sb.append("---- Personajes principales ----\n");
+		    if (personaje != null && !personaje.isEmpty()) {
+		        for (Personaje p : personaje) {
+		            sb.append(p.mostrarInformacion()).append("\n");
+		        }
+		    } else {
+		        sb.append("No hay personajes registrados.\n");
+		    }
+
+		    sb.append("\n---- Eventos principales ----\n");
+		    if (evento != null && !evento.isEmpty()) {
+		        for (Evento e : evento) {
+		            sb.append(e.mostrarInformacion()).append("\n");
+		        }
+		    } else {
+		        sb.append("No hay eventos registrados.\n");
+		    }
+
+		    return sb.toString();
 	}
 
 	@Override
 	public void agregarPersonaje(Personaje p) {
-		// TODO Auto-generated method stub
-		
+		if (personaje == null) {
+	        personaje = new ArrayList<>();
+	    }
+	    personaje.add(p);
 	}
 
 	@Override
 	public void agregarEvento(Evento e) {
-		// TODO Auto-generated method stub
-		
+		if (evento == null) {
+	        evento = new ArrayList<>();
+	    }
+	    evento.add(e);
 	}
-	
-	
 	
 }

@@ -14,7 +14,7 @@ public class Usuario implements Informacion{
 		this.nombreUsuario = nombreUsuario;
 		this.password = password;
 		this.fotoUsuario = fotoUsuario;
-		civFav = new ArrayList<>();
+		this.civFav = civFav != null ? civFav : new ArrayList<>();
 	}
 
 	//Getters y Setters
@@ -52,17 +52,19 @@ public class Usuario implements Informacion{
 	
 	//Métodos
 	public void buscarInformacion() {
-		
+		//TODO: Implementar búsqueda por textoen el frontend.
 	}
 	
 	@Override
-	public void mostrarInformacion() {
-		// TODO Auto-generated method stub
-		
+	public String mostrarInformacion() {
+		return "Usuario: " + nombreUsuario +
+	               "\nFoto: " + fotoUsuario +
+	               "\nCivilizaciones favoritas: " + civFav.size();
 	}
 	
 	public void guardarCivFav(Civilizacion c) {
-		
+		 if (civFav == null) civFav = new ArrayList<>();
+	        if (!civFav.contains(c)) civFav.add(c);
 	}
 	
 }
